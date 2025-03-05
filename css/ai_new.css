@@ -1,0 +1,235 @@
+@charset "UTF-8";
+.pro-ai .container {
+  max-width: 1456px;
+}
+
+.steps-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  margin: 50px 0;
+}
+
+.steps-images {
+  position: sticky;
+  top: 100px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+}
+.steps-images::before {
+  content: "";
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgb(134, 0, 68) 0%, rgba(0, 49, 149, 0) 70%);
+  filter: blur(90px);
+  z-index: 2;
+  pointer-events: none;
+}
+.steps-images::after {
+  content: "";
+  position: absolute;
+  right: -100px;
+  bottom: 100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgb(0, 49, 149) 0%, rgba(0, 49, 149, 0) 70%);
+  filter: blur(80px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.step-image {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transform: translateY(50px) scale(1.1);
+  will-change: transform, opacity;
+  transform-origin: center;
+  transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 749px;
+  width: 100%;
+  background: #121212;
+  border-radius: 30px;
+}
+.step-image img {
+  max-width: 90%;
+  height: auto;
+}
+.step-image.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.step-image.exit {
+  opacity: 0;
+  transform: translateY(50px) scale(1.1);
+}
+
+.steps-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.step-text-container {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.step-text-container:nth-child(1) .step-text::before {
+  content: "шаг первый";
+}
+.step-text-container:nth-child(2) .step-text::before {
+  content: "шаг второй";
+}
+.step-text-container:nth-child(3) .step-text::before {
+  content: "шаг третий";
+}
+.step-text-container:nth-child(4) .step-text::before {
+  content: "шаг четвертый";
+}
+.step-text-container:nth-child(5) .step-text::before {
+  content: "шаг пятый";
+}
+.step-text-container:nth-child(6) .step-text::before {
+  content: "шаг шестой";
+}
+
+.step-text {
+  min-height: 200px;
+  color: #fff;
+  max-width: 473px;
+}
+.step-text::before {
+  content: "шаг";
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #2764E0 -2.88%, #DD0858 107.69%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* Обрезаем фон по тексту */
+  -webkit-text-fill-color: transparent;
+  /* Делаем текст прозрачным */
+  padding-bottom: 5px;
+}
+
+.step-title {
+  font-size: 48px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.step-description {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .step-title {
+    font-size: 36px;
+  }
+  .steps-images::after {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .steps-container {
+    gap: 10px;
+  }
+  .step-title {
+    font-size: 22px;
+  }
+  .step-description {
+    font-size: 12px;
+  }
+  .steps-images,
+  .step-image {
+    height: 50vh;
+    padding: 10px;
+  }
+  .steps-images img,
+  .step-image img {
+    max-width: 100%;
+  }
+  .steps-images::after,
+  .step-image::after {
+    height: 200px;
+    width: 200px;
+    bottom: 0;
+  }
+  .steps-images::before,
+  .step-image::before {
+    height: 100px;
+    width: 100px;
+    top: 0;
+  }
+  .step-text-container {
+    height: 40vh;
+  }
+}
+.pro-extra .pro-title {
+  margin-bottom: 16px;
+}
+.pro-extra .pro-subtitle {
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.pro-extra-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 48px 38px;
+  margin-bottom: 60px;
+}
+.pro-extra-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+.pro-extra-text {
+  font-size: 24px;
+  font-weight: 600;
+}
+.pro-extra .pro-btn_transparent {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .pro-extra .pro-title {
+    margin-bottom: 12px;
+  }
+  .pro-extra .pro-subtitle {
+    font-size: 16px;
+    margin: 0 0 32px;
+  }
+  .pro-extra .pro-extra-text {
+    font-size: 16px;
+  }
+  .pro-extra .pro-extra-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .pro-extra .pro-extra-item {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

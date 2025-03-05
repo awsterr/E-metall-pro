@@ -1,0 +1,299 @@
+.pro-ai {
+   .container {
+      max-width: 1456px;
+   }
+}
+
+.steps-container {
+   display: flex;
+   align-items: flex-start;
+   gap: 40px;
+   // margin: 100px -110px;
+   // max-width: 1200px;
+   position: relative;
+   margin: 50px 0;
+}
+
+
+.steps-images {
+   position: sticky;
+   top: 100px;
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   height: 90vh;
+   align-items: center;
+
+
+   // height: 749px;
+   // background: #121212;
+   // border-radius: 30px;
+
+   &::before {
+      content: "";
+      position: absolute;
+      left: 100px;
+      top: 200px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle,
+            rgba(134, 0, 68, 1) 0%,
+            rgba(0, 49, 149, 0) 70%);
+      filter: blur(90px);
+      z-index: 2;
+      pointer-events: none; // Исключаем из кликабельности
+   }
+
+   &::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      bottom: 100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle,
+            rgba(0, 49, 149, 1) 0%,
+            rgba(0, 49, 149, 0) 70%);
+      filter: blur(80px);
+      z-index: 2;
+      pointer-events: none; // Исключаем из кликабельности
+
+   }
+
+
+}
+
+.step-image {
+   position: absolute;
+   top: 0;
+   // bottom: 0;
+   opacity: 0;
+   transform: translateY(50px) scale(1.1);
+   will-change: transform, opacity;
+   transform-origin: center;
+   transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+
+   // overflow: hidden;
+   img {
+      max-width: 90%;
+      height: auto
+   }
+
+   height: 749px;
+   width: 100%;
+   background: #121212;
+   border-radius: 30px;
+
+
+
+   &.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+   }
+
+   &.exit {
+      opacity: 0;
+      transform: translateY(50px) scale(1.1);
+   }
+}
+
+.steps-content {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   gap: 80px;
+}
+
+
+.step-text-container {
+   height: 85vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   &:nth-child(1) .step-text::before {
+      content: 'шаг первый';
+   }
+
+   &:nth-child(2) .step-text::before {
+      content: 'шаг второй';
+   }
+
+   &:nth-child(3) .step-text::before {
+      content: 'шаг третий';
+   }
+
+   &:nth-child(4) .step-text::before {
+      content: 'шаг четвертый';
+   }
+
+   &:nth-child(5) .step-text::before {
+      content: 'шаг пятый';
+   }
+
+   &:nth-child(6) .step-text::before {
+      content: 'шаг шестой';
+   }
+}
+
+.step-text {
+   min-height: 200px; // Чтобы текстовые блоки были равномерными
+   color: #fff;
+   max-width: 473px;
+
+
+   &::before {
+      content: 'шаг';
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 600;
+      background: linear-gradient(90deg, #2764E0 -2.88%, #DD0858 107.69%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      /* Обрезаем фон по тексту */
+      -webkit-text-fill-color: transparent;
+      /* Делаем текст прозрачным */
+      padding-bottom: 5px;
+   }
+
+
+
+}
+
+.step-title {
+   font-size: 48px;
+   font-weight: bold;
+   position: relative;
+   margin-bottom: 24px;
+   // color: #333;
+
+}
+
+.step-description {
+   font-size: 16px;
+   // color: #666;
+}
+
+@media screen and (max-width: 1024px) {
+   .step-title {
+      font-size: 36px;
+   }
+
+   .steps-images::after {
+      height: 300px;
+      width: 300px;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .steps-container {
+      gap: 10px;
+   }
+
+   .step-title {
+      font-size: 22px;
+   }
+
+   .step-description {
+      font-size: 12px;
+   }
+
+   .steps-images,
+   .step-image {
+      height: 50vh;
+      padding: 10px;
+
+      img {
+         max-width: 100%;
+      }
+
+      &::after {
+         height: 200px;
+         width: 200px;
+         bottom: 0;
+      }
+
+      &::before {
+         height: 100px;
+         width: 100px;
+         top: 0;
+      }
+   }
+
+   .step-text-container {
+      height: 40vh;
+   }
+}
+
+
+.pro-extra {
+   .pro-title {
+      margin-bottom: 16px;
+   }
+
+   .pro-subtitle {
+      max-width: 640px;
+      margin: 0 auto 48px;
+   }
+
+   &-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 48px 38px;
+      margin-bottom: 60px;
+   }
+
+   &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+   }
+
+   &-text {
+      font-size: 24px;
+      font-weight: 600;
+   }
+
+   .pro-btn_transparent {
+      margin: 0 auto;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .pro-extra {
+      .pro-title {
+         margin-bottom: 12px;
+      }
+
+      .pro-subtitle {
+         font-size: 16px;
+         margin: 0 0 32px;
+
+      }
+
+      .pro-extra-text {
+         font-size: 16px;
+      }
+
+      .pro-extra-wrapper {
+         display: flex;
+         flex-direction: column;
+         gap: 32px;
+      }
+
+      .pro-extra-item {
+         flex-direction: column;
+         gap: 16px;
+         align-items: flex-start;
+      }
+   }
+
+}
