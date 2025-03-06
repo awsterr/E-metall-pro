@@ -153,40 +153,79 @@
 }
 @media screen and (max-width: 768px) {
   .steps-container {
-    gap: 10px;
+    gap: 30px;
+    flex-direction: column;
   }
-  .step-title {
-    font-size: 18px;
+  .steps-container .steps-images {
+    display: contents;
   }
-  .step-text::before {
-    font-size: 12px;
+  .steps-container .steps-images::after {
+    content: none;
   }
-  .step-description {
-    font-size: 12px;
+  .steps-container .steps-images::before {
+    content: none;
   }
-  .steps-images,
-  .step-image {
-    height: 50vh;
-    padding: 10px;
+  .steps-container .steps-images .step-image {
+    opacity: 1;
+    transform: none;
+    position: static;
+    height: auto;
+    padding: 15px;
   }
-  .steps-images img,
-  .step-image img {
+  .steps-container .steps-images .step-image:nth-child(1) {
+    order: 1;
+  }
+  .steps-container .steps-images .step-image:nth-child(2) {
+    order: 2;
+  }
+  .steps-container .steps-images .step-image:nth-child(3) {
+    order: 3;
+  }
+  .steps-container .steps-images .step-image:nth-child(4) {
+    order: 4;
+  }
+  .steps-container .steps-images .step-image:nth-child(5) {
+    order: 5;
+  }
+  .steps-container .steps-images .step-image:nth-child(6) {
+    order: 6;
+  }
+  .steps-container .steps-images .step-image img {
     max-width: 100%;
   }
-  .steps-images::after,
-  .step-image::after {
-    height: 200px;
-    width: 200px;
-    bottom: 0;
+  .steps-container .steps-content {
+    display: contents;
   }
-  .steps-images::before,
-  .step-image::before {
-    height: 100px;
-    width: 100px;
-    top: 0;
+  .steps-container .steps-content .step-text-container {
+    height: auto;
   }
-  .step-text-container {
-    height: 40vh;
+  .steps-container .steps-content .step-text-container:nth-child(1) {
+    order: 1;
+  }
+  .steps-container .steps-content .step-text-container:nth-child(2) {
+    order: 2;
+  }
+  .steps-container .steps-content .step-text-container:nth-child(3) {
+    order: 3;
+  }
+  .steps-container .steps-content .step-text-container:nth-child(4) {
+    order: 4;
+  }
+  .steps-container .steps-content .step-text-container:nth-child(5) {
+    order: 5;
+  }
+  .steps-container .steps-content .step-text-container:nth-child(6) {
+    order: 6;
+  }
+  .steps-container .steps-content .step-text-container .step-text {
+    padding-bottom: 80px;
+  }
+  .steps-container .steps-content .step-text-container .step-text .step-title {
+    font-size: 24px;
+  }
+  .steps-container .steps-content .step-text-container .step-text .step-description {
+    font-size: 14px;
+    max-width: none;
   }
 }
 .pro-extra .pro-title {

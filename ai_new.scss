@@ -187,48 +187,73 @@
 
 @media screen and (max-width: 768px) {
    .steps-container {
-      gap: 10px;
-   }
+      gap: 30px;
+      flex-direction: column;
 
-   .step-title {
-      font-size: 18px;
+      .steps-images {
+         display: contents;
 
+         &::after {
+            content: none;
+         }
 
-   }
+         &::before {
+            content: none;
+         }
 
-   .step-text::before {
-      font-size: 12px;
-   }
+         .step-image {
+            opacity: 1;
+            transform: none;
+            position: static;
+            height: auto;
+            padding: 15px;
 
-   .step-description {
-      font-size: 12px;
-   }
+            @for $i from 1 through 6 {
+               &:nth-child(#{$i}) {
+                  order: $i;
+               }
+            }
 
-   .steps-images,
-   .step-image {
-      height: 50vh;
-      padding: 10px;
+            img {
+               max-width: 100%;
+            }
 
-      img {
-         max-width: 100%;
+         }
       }
 
-      &::after {
-         height: 200px;
-         width: 200px;
-         bottom: 0;
-      }
+      .steps-content {
+         display: contents;
 
-      &::before {
-         height: 100px;
-         width: 100px;
-         top: 0;
+         .step-text-container {
+            height: auto;
+
+            @for $i from 1 through 6 {
+               &:nth-child(#{$i}) {
+                  order: $i;
+               }
+            }
+
+            .step-text {
+               padding-bottom: 80px;
+
+               &::before {
+                  // font-size: 12px;
+               }
+
+               .step-title {
+                  font-size: 24px;
+               }
+
+               .step-description {
+                  font-size: 14px;
+                  max-width: none;
+               }
+            }
+         }
       }
    }
 
-   .step-text-container {
-      height: 40vh;
-   }
+
 }
 
 
