@@ -111,6 +111,7 @@
   min-height: 200px;
   color: #fff;
   max-width: 493px;
+  width: 100%;
 }
 .step-text::before {
   content: "шаг";
@@ -135,7 +136,7 @@
 }
 
 .step-description {
-  font-size: 16px;
+  font-size: 20px;
   max-width: 371px;
 }
 
