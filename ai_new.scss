@@ -189,7 +189,13 @@
    }
 
    .step-title {
-      font-size: 22px;
+      font-size: 18px;
+
+
+   }
+
+   .step-text::before {
+      font-size: 12px;
    }
 
    .step-description {
