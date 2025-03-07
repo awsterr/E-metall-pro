@@ -153,8 +153,9 @@
 }
 @media screen and (max-width: 768px) {
   .steps-container {
-    gap: 30px;
+    gap: 24px;
     flex-direction: column;
+    margin-top: 36px;
   }
   .steps-container .steps-images {
     display: contents;
@@ -170,7 +171,8 @@
     transform: none;
     position: static;
     height: auto;
-    padding: 15px;
+    padding: 0;
+    background: none;
   }
   .steps-container .steps-images .step-image:nth-child(1) {
     order: 1;
@@ -218,10 +220,15 @@
     order: 6;
   }
   .steps-container .steps-content .step-text-container .step-text {
-    padding-bottom: 80px;
+    padding-bottom: 47px;
+  }
+  .steps-container .steps-content .step-text-container .step-text::before {
+    font-size: 16px;
+    padding-bottom: 8px;
   }
   .steps-container .steps-content .step-text-container .step-text .step-title {
     font-size: 24px;
+    margin-bottom: 16px;
   }
   .steps-container .steps-content .step-text-container .step-text .step-description {
     font-size: 14px;

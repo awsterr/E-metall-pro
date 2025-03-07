@@ -187,8 +187,9 @@
 
 @media screen and (max-width: 768px) {
    .steps-container {
-      gap: 30px;
+      gap: 24px;
       flex-direction: column;
+      margin-top: 36px;
 
       .steps-images {
          display: contents;
@@ -206,7 +207,8 @@
             transform: none;
             position: static;
             height: auto;
-            padding: 15px;
+            padding: 0;
+            background: none;
 
             @for $i from 1 through 6 {
                &:nth-child(#{$i}) {
@@ -234,14 +236,16 @@
             }
 
             .step-text {
-               padding-bottom: 80px;
+               padding-bottom: 47px;
 
                &::before {
-                  // font-size: 12px;
+                  font-size: 16px;
+                  padding-bottom: 8px;
                }
 
                .step-title {
                   font-size: 24px;
+                  margin-bottom: 16px;
                }
 
                .step-description {
